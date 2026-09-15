@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T08:35:55+07:00",
+  "generated_at": "2026-09-15T08:48:05+07:00",
   "bookings": [],
   "common_room": [],
   "table_tennis": [
@@ -10,5 +10,13 @@
       "end_time": "16:00",
       "booker_name": "new"
     }
-  ]
+  ],
+  "tt_price": {
+    "normal_price_per_hour": 60.0,
+    "promo_price_per_hour": 50.0,
+    "promo_start_date": "2026-09-07",
+    "promo_end_date": "2026-10-07",
+    "current_price_per_hour": 50.0,
+    "is_promo_active_today": true
+  }
 }
