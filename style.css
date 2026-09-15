@@ -183,17 +183,15 @@ ul { list-style: none; }
   pointer-events: none;
 }
 .tt-promo-ribbon {
-  position: absolute; top: 14px; right: 18px;
+  display: inline-block;
   background: linear-gradient(135deg, #ffe28a, #fbbf24);
   color: #7c2d12;
   font-size: 0.7rem; font-weight: 900; letter-spacing: 0.03em;
   padding: 0.32rem 0.8rem;
   border-radius: 99px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.28), 0 0 0 2px rgba(255,255,255,0.5) inset;
-  transform: rotate(4deg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.22), 0 0 0 2px rgba(255,255,255,0.5) inset;
   white-space: nowrap;
-  z-index: 2;
-  max-width: calc(100% - 36px);
+  margin-bottom: 0.6rem;
 }
 .tt-promo-text { position: relative; z-index: 1; }
 .tt-promo-label {
@@ -548,7 +546,6 @@ ul { list-style: none; }
   .tt-gallery-track-inner { gap: 0.75rem; }
   .tt-promo-card { margin-top: -1.5rem; }
   .tt-promo-inner { flex-direction: column; align-items: flex-start; padding: 1.5rem; }
-  .tt-promo-ribbon { position: static; display: inline-block; margin-bottom: 0.6rem; transform: none; }
   .tt-promo-price { align-self: stretch; }
   .tt-line-inner { flex-direction: column; text-align: center; }
   .tt-line-text { max-width: 100%; }
