@@ -92,21 +92,36 @@ async function loadTTData() {
   }
 }
 
+function renderTTPrice(data) {
+  const pillText = document.getElementById('tt-price-pill-text');
+  const infoNormal = document.getElementById('tt-info-normal');
+  if (infoNormal) infoNormal.textContent = data.normal_price_per_hour;
+  if (pillText) {
+    if (data.is_promo_active_today) {
+      pillText.textContent = `โปรโมชั่นวันนี้ ${data.current_price_per_hour} บาท/ชม.`;
+    } else {
+      pillText.textContent = `${data.current_price_per_hour} บาท / ชั่วโมง`;
+    }
+  }
+}
+
 async function loadTTPrice() {
+  // Try live API first (when served from FastAPI on Railway)
   try {
     const res = await fetch('/api/public/table-tennis/price');
-    if (!res.ok) throw new Error('price fetch failed');
-    const data = await res.json();
-    const pillText = document.getElementById('tt-price-pill-text');
-    const infoNormal = document.getElementById('tt-info-normal');
-    if (infoNormal) infoNormal.textContent = data.normal_price_per_hour;
-    if (pillText) {
-      if (data.is_promo_active_today) {
-        pillText.textContent = `โปรโมชั่นวันนี้ ${data.current_price_per_hour} บาท/ชม.`;
-      } else {
-        pillText.textContent = `${data.current_price_per_hour} บาท / ชั่วโมง`;
-      }
+    if (res.ok) {
+      renderTTPrice(await res.json());
+      return;
     }
+  } catch (_) {}
+
+  // Fallback: static JSON pushed by the manager system (when served from GitHub Pages)
+  try {
+    const res = await fetch(`./data/bookings.json?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (!data.tt_price) throw new Error('no tt_price in snapshot');
+    renderTTPrice(data.tt_price);
   } catch (_) {
     const pillText = document.getElementById('tt-price-pill-text');
     if (pillText) pillText.textContent = 'ติดต่อสอบถามราคา';
