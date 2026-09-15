@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-09-15T08:35:55+07:00",
+  "bookings": [],
+  "common_room": [],
+  "table_tennis": [
+    {
+      "table_no": 1,
+      "date": "2026-09-07",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "booker_name": "new"
+    }
+  ]
+}
