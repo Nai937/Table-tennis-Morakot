@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Table Tennis Morakot — สนามปิงปอง เปิด 15:00–20:00 ทุกวัน ตรวจสอบตารางว่างและโปรโมชั่นออนไลน์"/>
+  <meta property="og:title" content="Table Tennis Morakot — ตารางจองโต๊ะปิงปอง"/>
+  <meta property="og:description" content="ตรวจสอบตารางว่าง 4 โต๊ะ ภาพบรรยากาศสนาม และโปรโมชั่นล่าสุด"/>
+  <title>Table Tennis Morakot | ตารางจองโต๊ะปิงปอง</title>
+  <link rel="icon" type="image/jpeg" href="./images/logo.jpg"/>
+  <link rel="apple-touch-icon" href="./images/logo.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="tt-header">
+  <div class="tt-header-inner">
+    <a href="#" class="tt-brand">
+      <div class="tt-logo-wrap">
+        <img src="./images/logo.jpg" alt="Table Tennis Morakot" class="tt-logo"/>
+      </div>
+      <div class="tt-brand-text">
+        <span class="tt-brand-main">Table Tennis Morakot</span>
+        <span class="tt-brand-sub">สนามปิงปอง 4 โต๊ะ</span>
+      </div>
+    </a>
+    <div class="tt-header-right">
+      <div class="tt-header-clock">
+        <div class="tt-clock-time" id="tt-clock-time">00:00:00</div>
+        <div class="tt-clock-date" id="tt-clock-date"></div>
+      </div>
+      <button class="tt-line-btn" onclick="ttOpenQrModal()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><line x1="14" y1="14" x2="14" y2="21"/><line x1="21" y1="14" x2="21" y2="21"/><line x1="14" y1="17.5" x2="21" y2="17.5"/></svg>
+        แอด LINE
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="tt-hero">
+  <div class="tt-hero-bg" aria-hidden="true">
+    <div class="tt-hero-orb tt-hero-orb1"></div>
+    <div class="tt-hero-orb tt-hero-orb2"></div>
+    <div class="tt-hero-ball" style="width:26px;height:26px;top:22%;left:12%;"></div>
+    <div class="tt-hero-ball" style="width:16px;height:16px;top:65%;left:22%;"></div>
+    <div class="tt-hero-ball" style="width:20px;height:20px;top:30%;right:16%;"></div>
+  </div>
+  <div class="tt-hero-content">
+    <div class="tt-hero-badge"><span class="tt-live-dot"></span> <span id="tt-live-status">กำลังตรวจสอบโต๊ะว่าง...</span></div>
+    <h1 class="tt-hero-title">Table Tennis <span>Morakot</span></h1>
+    <p class="tt-hero-sub">สนามปิงปองคุณภาพ 4 โต๊ะ — เปิดบริการทุกวัน 15:00–20:00 น.</p>
+    <div class="tt-hero-pills">
+      <div class="tt-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>15:00 – 20:00 น.</span>
+      </div>
+      <div class="tt-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span>4 โต๊ะมาตรฐาน</span>
+      </div>
+      <div class="tt-pill tt-pill-accent" id="tt-price-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span id="tt-price-pill-text">กำลังโหลดราคา...</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROMOTION ===== -->
+<div class="tt-promo-card">
+  <div class="tt-promo-inner">
+    <img src="./images/promo_ribbon.png" alt="โปรโมชั่น" class="tt-promo-ribbon"/>
+    <div class="tt-promo-text">
+      <div class="tt-promo-label">โปรโมชั่นวันนี้</div>
+      <div class="tt-promo-title">เล่น 1 ชั่วโมง + ไม้ปิงปอง 2 อัน<br/>+ ลูกปิงปอง 1 ลูก เพียง <strong>70 บาท</strong></div>
+    </div>
+    <div class="tt-promo-price">
+      <div class="tt-promo-price-num">70฿</div>
+      <div class="tt-promo-price-unit">เซ็ตเดียวจบ / 1 ชม.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GALLERY ===== -->
+<section class="tt-section tt-gallery-section" id="gallery">
+  <div class="tt-section-inner">
+    <div class="tt-section-header">
+      <h2 class="tt-section-title">
+        <span class="tt-section-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </span>
+        ภาพบรรยากาศสนาม
+      </h2>
+      <p class="tt-section-sub">ตัวอย่างโต๊ะและพื้นที่ใช้งานจริง</p>
+    </div>
+    <div id="tt-gallery-wrap" class="tt-gallery-wrap">
+      <div class="tt-loading"><div class="tt-ball-loader"></div><span>กำลังโหลดรูปภาพ...</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCHEDULE ===== -->
+<section class="tt-section" id="schedule">
+  <div class="tt-section-inner">
+    <div class="tt-section-header">
+      <h2 class="tt-section-title">
+        <span class="tt-section-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </span>
+        ตารางว่างวันนี้ — รายวัน 4 โต๊ะ
+      </h2>
+      <p class="tt-section-sub">เลือกวันที่เพื่อตรวจสอบช่องว่างของแต่ละโต๊ะ</p>
+    </div>
+
+    <!-- Day nav -->
+    <div class="tt-day-nav">
+      <button class="tt-nav-btn" onclick="changeDay(-1)">&#8249; วันก่อนหน้า</button>
+      <button class="tt-nav-btn tt-nav-today" onclick="goToday()">วันนี้</button>
+      <button class="tt-nav-btn" onclick="changeDay(1)">วันถัดไป &#8250;</button>
+      <span class="tt-day-label" id="tt-day-label"></span>
+    </div>
+
+    <div id="tt-schedule-wrap" class="tt-schedule-wrap">
+      <div class="tt-loading"><div class="tt-ball-loader"></div><span>กำลังโหลดข้อมูล...</span></div>
+    </div>
+
+    <!-- Legend -->
+    <div class="tt-legend">
+      <div class="tt-legend-item"><div class="tt-legend-dot tt-table-1"></div><span>โต๊ะ 1 — จอง</span></div>
+      <div class="tt-legend-item"><div class="tt-legend-dot tt-table-2"></div><span>โต๊ะ 2 — จอง</span></div>
+      <div class="tt-legend-item"><div class="tt-legend-dot tt-table-3"></div><span>โต๊ะ 3 — จอง</span></div>
+      <div class="tt-legend-item"><div class="tt-legend-dot tt-table-4"></div><span>โต๊ะ 4 — จอง</span></div>
+      <div class="tt-legend-item"><div class="tt-legend-dot tt-legend-free"></div><span>ว่าง — พร้อมจอง</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INFO CARDS ===== -->
+<section class="tt-section tt-info-section" id="info">
+  <div class="tt-section-inner">
+    <div class="tt-section-header">
+      <h2 class="tt-section-title">
+        <span class="tt-section-icon tt-icon-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </span>
+        ข้อมูลการใช้บริการ
+      </h2>
+    </div>
+    <div class="tt-info-grid">
+
+      <div class="tt-info-card">
+        <div class="tt-info-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>เวลาเปิด-ปิด</h3>
+        <ul class="tt-info-list">
+          <li class="highlight">เปิดบริการ <strong>ทุกวัน</strong></li>
+          <li class="highlight">เวลา <strong>15:00 – 20:00 น.</strong></li>
+          <li>มีทั้งหมด <strong>4 โต๊ะ</strong> พร้อมเล่น</li>
+          <li class="muted">แนะนำจองล่วงหน้าในช่วงเย็น (ชั่วโมงยอดนิยม)</li>
+        </ul>
+      </div>
+
+      <div class="tt-info-card">
+        <div class="tt-info-card-icon tt-info-card-icon-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>ราคา &amp; โปรโมชั่น</h3>
+        <ul class="tt-info-list" id="tt-price-info-list">
+          <li class="highlight">ราคาปกติ <strong id="tt-info-normal">–</strong> บาท / ชั่วโมง</li>
+          <li>โปรโมชั่น <strong>1 ชม. + ไม้ 2 อัน + ลูก 1 ลูก = 70 บาท</strong></li>
+          <li>ชำระผ่าน <strong>QR Code / โอนเงิน</strong> หรือ <strong>เงินสด</strong></li>
+          <li class="muted">แนบสลิปยืนยันการโอนทุกครั้ง</li>
+        </ul>
+      </div>
+
+      <div class="tt-info-card">
+        <div class="tt-info-card-icon tt-info-card-icon-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>วิธีจอง</h3>
+        <ul class="tt-info-list">
+          <li>ตรวจสอบช่องว่างจาก <strong>ตารางด้านบน</strong></li>
+          <li>ติดต่อจองผ่าน <strong>LINE OA</strong> (สแกน QR ด้านล่าง)</li>
+          <li class="highlight">แจ้ง วัน / เวลา / โต๊ะ / ชื่อ-นามสกุล</li>
+          <li class="muted">รับยืนยันการจองภายใน 15 นาที</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== LINE / QR ===== -->
+<section class="tt-line-section" id="line">
+  <div class="tt-line-inner">
+    <div class="tt-line-text">
+      <h2>จองโต๊ะง่าย ๆ ผ่าน LINE OA</h2>
+      <p>สแกน QR Code เพื่อแอดไลน์ Table Tennis Morakot สอบถามโต๊ะว่าง แจ้งโปรโมชั่น และจองคิวล่วงหน้าได้ทันที</p>
+      <div class="tt-line-steps">
+        <div class="tt-line-step"><span class="tt-line-step-num">1</span> สแกน QR ด้านขวา หรือกดปุ่ม "แอด LINE" ด้านบน</div>
+        <div class="tt-line-step"><span class="tt-line-step-num">2</span> แจ้งวัน เวลา และโต๊ะที่ต้องการจอง</div>
+        <div class="tt-line-step"><span class="tt-line-step-num">3</span> รอแอดมินยืนยันภายใน 15 นาที</div>
+      </div>
+    </div>
+    <div class="tt-line-qr-card">
+      <img src="./images/line_qr.png" alt="LINE QR Code Table Tennis Morakot"/>
+      <div class="tt-line-qr-label">สแกนเพื่อแอด LINE OA</div>
+      <div class="tt-line-qr-sub">Table Tennis Morakot</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="tt-footer">
+  <div class="tt-footer-inner">
+    <div class="tt-footer-brand">
+      <img src="./images/logo.jpg" alt="logo" class="tt-footer-logo"/>
+      <div>
+        <div class="tt-footer-name">Table Tennis Morakot</div>
+        <div class="tt-footer-sub">สนามปิงปอง 4 โต๊ะ</div>
+      </div>
+    </div>
+    <div class="tt-footer-details">
+      <div class="tt-footer-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>เปิดทุกวัน 15:00 – 20:00 น.</span>
+      </div>
+      <div class="tt-footer-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <span>โปรโมชั่น 1 ชม.+ไม้ 2 อัน+ลูก 1 ลูก = 70 บาท</span>
+      </div>
+    </div>
+    <div class="tt-footer-updated">
+      อัพเดทข้อมูลล่าสุด: <span id="tt-updated-at">—</span>
+    </div>
+  </div>
+  <div class="tt-footer-bottom">
+    <p>&copy; 2026 Table Tennis Morakot. สงวนลิขสิทธิ์ทุกประการ.</p>
+  </div>
+</footer>
+
+<!-- Floating LINE button -->
+<button class="tt-fab" onclick="ttOpenQrModal()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><line x1="14" y1="14" x2="14" y2="21"/><line x1="21" y1="14" x2="21" y2="21"/><line x1="14" y1="17.5" x2="21" y2="17.5"/></svg>
+  <span>แอด LINE จองโต๊ะ</span>
+</button>
+
+<!-- QR Modal -->
+<div id="tt-qr-modal" class="tt-modal-overlay" style="display:none" onclick="ttCloseQrModal(event)">
+  <div class="tt-modal-card" onclick="event.stopPropagation()">
+    <button class="tt-modal-close" onclick="ttCloseQrModal()">&#10005;</button>
+    <h3>แอด LINE OA</h3>
+    <p>Table Tennis Morakot</p>
+    <img src="./images/line_qr.png" alt="LINE QR Code"/>
+    <p>สแกนเพื่อสอบถาม / จองโต๊ะ</p>
+  </div>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>
